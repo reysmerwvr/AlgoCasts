@@ -7,6 +7,26 @@
 //   palindrome("abba") === true
 //   palindrome("abcdefg") === false
 
-function palindrome(str) {}
+// Option 1 - Javascript equivalent
+// function palindrome(str) {
+//     const reversed = str.split('').reverse().join('');
+//     return reversed === str
+// }
+
+// Option 1 - Python equivalent
+// def palindrome(string):
+//     """
+
+//     :type string: str
+//     """
+//     from re import sub
+//     s = sub('[\W_]', '', string.lower())
+//     return s == s[::-1]
+
+function palindrome(str) {
+    return str.split('').every((char, index) => {
+        return char === str[str.length - index - 1];
+    });
+}
 
 module.exports = palindrome;
