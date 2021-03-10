@@ -105,10 +105,62 @@ function storage(n, m, h, v) {
 
 // console.log(storage(3, 2, [1, 2, 3], [1, 2]));
 
+// Exercise 3 - https://leetcode.com/discuss/interview-question/819577/Throttling-Gateway-Hackerrank
+
+function validateDroppedRequests({
+  droppedRequests,
+  requestTime,
+  i,
+  dropped
+}) {
+  const req = requestTime[i]
+  if (!droppedRequests.hasOwnProperty(req)
+    || droppedRequests[req] !== i) {
+    droppedRequests[req] = i;
+    dropped += 1;
+  }
+  return dropped;
+}
+
+function droppedRequests(requestTime) {
+  // Write your code here
+  let dropped = 0;
+  const droppedRequests = {};
+
+  for (let i = 0 in requestTime) {
+    const req = requestTime[i]
+    if (i > 2 && req === requestTime[i - 3]) {
+      dropped = validateDroppedRequests({ droppedRequests, requestTime, i, dropped });
+    } else if (i > 19 && (req - requestTime[i - 20]) < 10) {
+      dropped = validateDroppedRequests({ droppedRequests, requestTime, i, dropped });
+    } else if (i > 59 && (req - requestTime[i - 60]) < 60) {
+      dropped = validateDroppedRequests({ droppedRequests, requestTime, i, dropped });
+    }
+  }
+  return dropped;
+}
+
+// Exercise 4
+
+function doubleSize(arr, b) {
+  // Write your code here
+
+  const reorderedArray = mergeSort(arr);
+  let num = b;
+  reorderedArray.forEach(element => {
+    if (element === num) {
+      num = element * 2;
+    }
+  });
+  return num;
+}
+
 module.exports = {
   mergeSort,
   merge,
   calculateElasticCost,
   maxStorageVolume,
-  storage
+  storage,
+  droppedRequests,
+  doubleSize
 }
