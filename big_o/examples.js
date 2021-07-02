@@ -1,4 +1,4 @@
-// Example 1 O(N)
+// Example 1 O(n)
 
 const foo = (arr = []) => {
   sum = 0;
@@ -17,7 +17,7 @@ const foo = (arr = []) => {
 
 foo([1, 2, 3, 4]);
 
-// Example 2 O(N^2)
+// Example 2 O(n^2)
 
 const printPairs = (arr = []) => {
   for (let i of arr) {
@@ -29,7 +29,7 @@ const printPairs = (arr = []) => {
 
 printPairs([1, 2, 3, 4]);
 
-// Example 3 O(N^2 / 2) O(N^2)
+// Example 3 O(n^2 / 2) O(n^2)
 
 const printUnorderedPairs = (arr = []) => {
   for (let i = 0; i < arr.length; i++) {
@@ -75,7 +75,7 @@ const printUnorderedPairsThree = (arrA = [], arrB = []) => {
 
 printUnorderedPairsThree([1, 2, 3, 4], [1, 2]);
 
-// Example 6 O(N)
+// Example 6 O(n)
 
 const reverse = (arr = []) => {
   for (let i = 0; i < arr.length / 2; i++) {
