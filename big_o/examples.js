@@ -88,3 +88,29 @@ const reverse = (arr = []) => {
 };
 
 console.log(reverse([1, 2, 3, 4]));
+
+// Example 7
+// Which of the following are equivalent to O(N)? Why?
+/*
+ * O(n + p), where P < N/2
+ * O(2n)
+ * O(n + log n)
+ * O(n + m)
+ */
+
+// Example 8 O(a * s(log a + log s))
+
+const sortAll = (arr = []) => {
+  const sortedStrings = [];
+  // O(a * s log s)
+  for (let value of arr) {
+    const sortedString = value
+      .split("")
+      .sort((a, b) => a.localeCompare(b))
+      .join(""); // O(s log s)
+    sortedStrings.push(sortedString);
+  }
+  return sortedStrings.sort(); // O(a * s log a)
+};
+
+console.log(sortAll(["zabcd", "bcvdpia"]));
