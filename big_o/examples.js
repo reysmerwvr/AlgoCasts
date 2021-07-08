@@ -114,3 +114,12 @@ const sortAll = (arr = []) => {
 };
 
 console.log(sortAll(["zabcd", "bcvdpia"]));
+
+// Example 9 O(n)
+
+const sum = (node) => {
+  if (node === null) {
+    return 0;
+  }
+  return sum(node.left) + node.value + sum(node.right);
+}
