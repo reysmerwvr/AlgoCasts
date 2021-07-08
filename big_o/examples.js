@@ -122,15 +122,32 @@ const sum = (node) => {
     return 0;
   }
   return sum(node.left) + node.value + sum(node.right);
-}
+};
 
 // Example 10 O(sqrt(n))
 
 const isPrime = (n) => {
   for (let x = 2; x * x <= n; x++) {
     if (n % x === 0) {
-      return false
+      return false;
     }
-    return true
+    return true;
   }
-}
+};
+
+console.log(isPrime(33));
+
+// Example 11 Factorial O(n)
+// This is a just a straight recursion from n to n-1 to n-2 down to 1.
+
+const factorial = (n) => {
+  if (n < 0) {
+    return -1;
+  } else if (n === 0) {
+    return 1;
+  } else {
+    return n * factorial(n - 1); /// 5 fact(4)[4 * fact(3)[3 * fact(2)[2 * fact(1)[1 * fact(0)]]]]
+  }
+};
+
+console.log(factorial(5));
