@@ -151,3 +151,16 @@ const factorial = (n) => {
 };
 
 console.log(factorial(5));
+
+// Example 12 Permutation - O(n!) - Worst case O(n * n * n!) => O((n + 2)!)
+const permutation = (str, prefix = "") => {
+  if (str.length === 0) {
+    console.log(prefix);
+  } else {
+    for (let i = 0; i < str.length; i++) {
+      permutation(str.slice(0, i) + str.slice(i + 1), prefix + str[i]);
+    }
+  }
+}
+
+permutation("abcd");
