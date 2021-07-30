@@ -164,3 +164,57 @@ const permutation = (str, prefix = "") => {
 }
 
 permutation("abcd");
+
+// Example 13 Fibonacci - O(2^n)
+const fib = (n) => {
+  if (n === 0) {
+    return 0;
+  } else if (n === 1) {
+    return 1;
+  } else {
+    return fib(n - 1) + fib(n - 2);
+  }
+}
+
+console.log(fib(5));
+
+// Example 14 All Fibonacci - O(2^n)
+const allFib = (n) => {
+  for (let i = 0; i < n; i++) {
+    console.log(i + ": " + fib(i));
+  }
+}
+
+allFib(5);
+
+// Example 15 All Fibonacci Memoize - O(n)
+const memoize = (f) => {
+  const memo = {};
+  return (x) => {
+    if (memo[x] === undefined) {
+      memo[x] = f(x);
+    }
+    return memo[x];
+  };
+}
+
+const memoFib = memoize(allFib);
+
+memoFib(5);
+
+// Example 16 Powers of 2 - O(log n)
+const powersOf2 = (n) => {
+  const nInteger = parseInt(n);
+  if (nInteger < 1) {
+    return 0;
+  } else if (nInteger === 1) {
+    console.log(1);
+    return 1;
+  } else {
+    const curr = powersOf2(nInteger / 2) * 2;
+    console.log(curr);
+    return curr;
+  }
+}
+
+powersOf2(50);
