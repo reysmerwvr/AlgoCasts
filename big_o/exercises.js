@@ -46,3 +46,24 @@ const div = (a, b) => {
 }
 
 console.log(div(10, 3));
+
+// Exercise 5 sqrt, n^(1/2) O(n^(1/2))
+const sqrt = (n) => {
+  return sqrtHelper(n, 1, n);
+}
+
+const sqrtHelper = (n, min, max) => {
+  if (max < min) return -1; // no square root
+
+  const guess = parseInt((min + max) / 2, 10);
+
+  if (guess * guess === n) { // found it!
+    return guess;
+  } else if (guess * guess < n) { // guess is too low
+    return sqrtHelper(n, guess + 1, max); // try higher
+  } else { // too high
+    return sqrtHelper(n, min, guess - 1); // try lower
+  }
+}
+
+console.log(sqrt(25));
