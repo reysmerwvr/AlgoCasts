@@ -47,7 +47,7 @@ const div = (a, b) => {
 
 console.log(div(10, 3));
 
-// Exercise 5 sqrt, n^(1/2) O(n^(1/2))
+// Exercise 5 sqrt, O(log n) binary search
 const sqrt = (n) => {
   return sqrtHelper(n, 1, n);
 }
@@ -67,3 +67,25 @@ const sqrtHelper = (n, min, max) => {
 }
 
 console.log(sqrt(25));
+
+// Exercise 6 the integer square root of a number. If the number is not a perfect square, return -1. It does this by trying
+// increasingly large numbers until it finds the right value (or is too high). What is the runtime complexity?
+// O(sqrt(n))
+const intSqrt = (n) => {
+  for (let guess = 1; guess * guess <= n; guess++) {
+    if (guess * guess == n) {
+      return guess;
+    }
+  }
+  return -1;
+}
+
+
+console.log(intSqrt(16));
+
+// Exercise 7 if a binary search tree is not balanced, how long might it take (worst case) to  find an element in it?
+// O(n) where n is the number of nodes in the tree. The max time to find and element is the depth tree. The tree could be a straight list downward and have depth n.
+
+// You are looking for specific value in a tree, but the tree is not a binary search tree.
+// What is the runtime complexity?
+// O(n). Without any ordering property on the nodes, we might have to search through all the nodes.
