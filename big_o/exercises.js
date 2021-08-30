@@ -89,3 +89,6 @@ console.log(intSqrt(16));
 // You are looking for specific value in a tree, but the tree is not a binary search tree.
 // What is the runtime complexity?
 // O(n). Without any ordering property on the nodes, we might have to search through all the nodes.
+
+// You are looking for a specific value in a bin, but the tree is not a bin search tree is not a binary search tree. What is the time complexity?
+// O(n). where n is the number of nodes in the tree. The max time to find and element is the depth tree. The tree could be a straight list downward and have depth n.
