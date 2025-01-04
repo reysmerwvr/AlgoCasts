@@ -1,14 +1,14 @@
 # AlgoCasts
 
-Companion repo to [The Coding Inteview Bootcamp: Algorithms + Data Structures](https://www.udemy.com/course/coding-interview-bootcamp-algorithms-and-data-structure/)
+Companion repo to [The Coding Interview BootCamp: Algorithms + Data Structures](https://www.udemy.com/course/coding-interview-bootcamp-algorithms-and-data-structure/)
 
 
-## Usefull commands
+## Useful commands
 
 ### Run Debugger
 
 ```bash
-> node inspect reversestring/index.js
+> node inspect fib/index.js
 > c
 > repl
 > str
@@ -17,5 +17,5 @@ Companion repo to [The Coding Inteview Bootcamp: Algorithms + Data Structures](h
 ### Run Test Suite
 
 ```bash
-> jest reversestring/test.js --watch
+> jest fib/test.js --watch
 ```
