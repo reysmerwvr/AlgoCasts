@@ -1,0 +1,25 @@
+{
+  "name": "algocasts",
+  "version": "1.0.0",
+  "description": "Javascript Algorithms and Data Structures",
+  "main": "fizzbuzz/index.js",
+  "scripts": {
+    "test": "vitest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reysmerwvr/AlgoCasts.git"
+  },
+  "keywords": [
+    "algocasts"
+  ],
+  "author": "Stephen Grider",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/reysmerwvr/AlgoCasts/issues"
+  },
+  "homepage": "https://github.com/reysmerwvr/AlgoCasts#readme",
+  "devDependencies": {
+    "vitest": "^2.1.8"
+  }
+}
