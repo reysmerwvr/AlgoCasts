@@ -165,7 +165,7 @@ describe('GetAt', () => {
 });
 
 describe('RemoveAt', () => {
-  test('removeAt doesnt crash on an empty list', () => {
+  test('removeAt does not crash on an empty list', () => {
     const l = new List();
     expect(() => {
       l.removeAt(0);
@@ -174,7 +174,7 @@ describe('RemoveAt', () => {
     }).not.toThrow();
   });
 
-  test('removeAt doesnt crash on an index out of bounds', () => {
+  test('removeAt does not crash on an index out of bounds', () => {
     const l = new List();
     expect(() => {
       const l = new List();
