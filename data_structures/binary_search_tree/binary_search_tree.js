@@ -62,6 +62,30 @@ class BinarySearchTree {
     if (value < root.value) return this.nodeExist(root.left, value)
     return this.nodeExist(root.right, value)
   }
+
+  preOrder() {
+    const { root } = this
+    if (!root) return
+    console.log(root.value)
+    this.preOrder(root.left)
+    this.preOrder(root.right)
+  }
+
+  inOrder() {
+    const { root } = this
+    if (!root) return
+    this.inOrder(root.left)
+    console.log(root.value)
+    this.inOrder(root.right)
+  }
+
+  postOrder() {
+    const { root } = this
+    if (!root) return
+    this.preOrder(root.left)
+    this.preOrder(root.right)
+    console.log(root.value)
+  }
 }
 
 module.exports = {
