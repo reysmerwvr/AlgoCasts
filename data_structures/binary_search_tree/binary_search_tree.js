@@ -5,6 +5,8 @@
  * Ex: File systems, a family tree, DOM, chat bots, abstract syntax tree
  */
 
+const { Queue } = require('../queue/queue')
+
 class Node {
   constructor(value) {
     this.value = value
@@ -86,6 +88,37 @@ class BinarySearchTree {
     this.preOrder(root.right)
     console.log(root.value)
   }
+
+  levelOrder() {
+    const queue = new Queue()
+    queue.enqueue(this.root)
+    while (!queue.isEmpty()) {
+      let curr = queue.dequeue()
+      console.log(curr.value)
+      if (curr.left) {
+        queue.enqueue(curr.left)
+      }
+      if (curr.right) {
+        queue.enqueue(curr.right)
+      }
+    }
+  }
+
+  min(root = this.root) {
+    if (!root.left) {
+      return root.value
+    } else {
+      return this.min(root.left)
+    }
+  }
+
+  max(root = this.root) {
+    if (!root.right) {
+      return root.value
+    } else {
+      return this.max(root.right)
+    }
+  }
 }
 
 module.exports = {
@@ -93,13 +126,15 @@ module.exports = {
   BinarySearchTree
 }
 
-// const bst = new BinarySearchTree()
-// const isEmpty = bst.isEmpty()
-// console.log('Tree is empty?', isEmpty)
+const bst = new BinarySearchTree()
+const isEmpty = bst.isEmpty()
+console.log('Tree is empty?', isEmpty)
 
-// bst.insert(10)
-// bst.insert(5)
-// bst.insert(15)
+bst.insert(10)
+bst.insert(5)
+bst.insert(15)
+bst.insert(3)
+bst.insert(7)
 
 // console.log(bst.contains(10))
 // console.log(bst.contains(20))
@@ -108,3 +143,7 @@ module.exports = {
 // console.log(bst.nodeExist(5))
 // console.log(bst.nodeExist(15))
 // console.log(bst.nodeExist(20))
+
+// bst.levelOrder()
+console.log(bst.min())
+console.log(bst.max())
