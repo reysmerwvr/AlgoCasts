@@ -23,10 +23,20 @@
 //     s = sub('[\W_]', '', string.lower())
 //     return s == s[::-1]
 
+// function palindrome(str) {
+//     return str.split('').every((char, index) => {
+//         return char === str[str.length - index - 1];
+//     });
+// }
+
 function palindrome(str) {
-    return str.split('').every((char, index) => {
-        return char === str[str.length - index - 1];
-    });
-}
+    const len = str.length;
+    for (let i = 0; i < len / 2; i++) {
+      if (str[i] !== str[len - 1 - i]) {
+        return false; // Return false as soon as a mismatch is found
+      }
+    }
+    return true; // If no mismatches, it's a palindrome
+  }
 
 module.exports = palindrome;
