@@ -30,7 +30,7 @@
 // Option 2 - Javascript - Exponential Runtime
 function memoize(fn) {
   const cache = {};
-  return function(...args) {
+  return function (...args) {
     if (cache[args]) {
       return cache[args];
     }
@@ -51,4 +51,4 @@ function slowFib(n) {
 
 const fib = memoize(slowFib);
 
-module.exports = fib;
+module.exports = { fib };
