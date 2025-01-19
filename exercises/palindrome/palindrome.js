@@ -4,17 +4,17 @@
 // form the same word if it is reversed. *Do* include spaces
 // and punctuation in determining if the string is a palindrome.
 // --- Examples:
-//   palindrome("abba") === true
-//   palindrome("abcdefg") === false
+//   isPalindrome("abba") === true
+//   isPalindrome("abcdefg") === false
 
 // Option 1 - Javascript equivalent
-// function palindrome(str) {
+// function isPalindrome(str) {
 //     const reversed = str.split('').reverse().join('');
 //     return reversed === str
 // }
 
 // Option 1 - Python equivalent
-// def palindrome(string):
+// def isPalindrome(string):
 //     """
 
 //     :type string: str
@@ -23,20 +23,22 @@
 //     s = sub('[\W_]', '', string.lower())
 //     return s == s[::-1]
 
-// function palindrome(str) {
+// function isPalindrome(str) {
 //     return str.split('').every((char, index) => {
 //         return char === str[str.length - index - 1];
 //     });
 // }
 
-function palindrome(str) {
-    const len = str.length;
-    for (let i = 0; i < len / 2; i++) {
-      if (str[i] !== str[len - 1 - i]) {
-        return false; // Return false as soon as a mismatch is found
-      }
+function isPalindrome(str) {
+  const len = str.length;
+  for (let i = 0; i < len / 2; i++) {
+    if (str[i] !== str[len - 1 - i]) {
+      return false; // Return false as soon as a mismatch is found
     }
-    return true; // If no mismatches, it's a palindrome
   }
+  return true; // If no mismatches, it's a palindrome
+}
 
-module.exports = palindrome;
+module.exports = {
+  isPalindrome
+}
