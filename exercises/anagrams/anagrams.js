@@ -1,5 +1,5 @@
 // --- Directions
-// Check to see if two provided strings are anagrams of eachother.
+// Check to see if two provided strings are anagrams of each other.
 // One string is an anagram of another if it uses the same characters
 // in the same quantity. Only consider characters, not spaces
 // or punctuation.  Consider capital letters to be the same as lower case
@@ -58,12 +58,12 @@
 
 // Option 2 - Javascript
 function anagrams(stringA, stringB) {
-    return cleanString(stringA) === cleanString(stringB);
+	return cleanString(stringA) === cleanString(stringB);
 }
 
 function cleanString(str) {
-    return str.replace(/[^\w]/g, '')
-        .toLowerCase().split('').sort().join('');
+	return str.replace(/[^\w]/g, '')
+		.toLowerCase().split('').sort().join('');
 }
 
-module.exports = anagrams;
+module.exports = { anagrams };

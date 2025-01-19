@@ -1,4 +1,6 @@
-const anagrams = require('./index.js');
+import { expect, test } from 'vitest'
+
+import { anagrams } from './anagrams';
 
 test('anagrams function exists', () => {
   expect(typeof anagrams).toEqual('function');
